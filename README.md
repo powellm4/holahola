@@ -2,6 +2,8 @@
 
 Holahola -- web app for language practice via video chat
 
+** All development should be branched from 'development' branch
+
 # Technology stack:
 
 Front end: Angular 7
