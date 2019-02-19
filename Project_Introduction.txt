@@ -1,5 +1,18 @@
+
+
 Holahola -- web app for language practice via video chat
 ----------------------
+
+Project To-do:
+
+- create slack channel for project
+- create jira board for project
+
+
+----------------------
+
+
+
 
 Technology stack:
 
