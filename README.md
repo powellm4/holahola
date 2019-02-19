@@ -1,27 +1,35 @@
 # Holahola
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Holahola -- web app for language practice via video chat
 
-## Development server
+# Technology stack:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Front end: Angular 7
 
-## Code scaffolding
+Back end: .NET Web Api w/ Entity Framework
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+DB: MySQL
 
-## Build
+Software used in development:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Visual Studio 2017 
 
-## Running unit tests
+Visual Studio Code
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+MySql Server Management Studio
 
-## Running end-to-end tests
+# Setup:
+Clone repository onto your machine from github.com/powellm4/holahola
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To run Angular app:
 
-## Further help
+Install npm (https://www.npmjs.com/get-npm)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Open Visual Studio Code
+
+Open holahola project
+
+In the terminal in vscode, install the angular cli by running: 
+	"npm install -g @angular/cli"
+
+In the terminal, you should now be able to run "ng serve -o" which will start the angular  app and open to a new tab that is running the app. 
