@@ -20,6 +20,8 @@ Visual Studio Code
 
 MySql Server Management Studio
 
+Project Management: Trello 
+
 # Setup:
 Clone repository onto your machine from github.com/powellm4/holahola
 
