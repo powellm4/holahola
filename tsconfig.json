@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@holahola/frontend/feature-authentication": [
+        "libs/frontend/feature-authentication/src/index.ts"
+      ],
+      "@holahola/frontend/shared/ui": ["libs/frontend/shared/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

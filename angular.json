@@ -118,6 +118,71 @@
           }
         }
       }
+    },
+    "frontend-feature-authentication": {
+      "projectType": "library",
+      "root": "libs/frontend/feature-authentication",
+      "sourceRoot": "libs/frontend/feature-authentication/src",
+      "prefix": "holahola",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/frontend/feature-authentication/tsconfig.lib.json",
+              "libs/frontend/feature-authentication/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/frontend/feature-authentication/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/frontend/feature-authentication/jest.config.js",
+            "tsConfig": "libs/frontend/feature-authentication/tsconfig.spec.json",
+            "setupFile": "libs/frontend/feature-authentication/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "frontend-shared-ui": {
+      "projectType": "library",
+      "root": "libs/frontend/shared/ui",
+      "sourceRoot": "libs/frontend/shared/ui/src",
+      "prefix": "holahola",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/frontend/shared/ui/tsconfig.lib.json",
+              "libs/frontend/shared/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/frontend/shared/ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/frontend/shared/ui/jest.config.js",
+            "tsConfig": "libs/frontend/shared/ui/tsconfig.spec.json",
+            "setupFile": "libs/frontend/shared/ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

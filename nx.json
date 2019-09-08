@@ -13,6 +13,12 @@
     },
     "frontend": {
       "tags": []
+    },
+    "frontend-feature-authentication": {
+      "tags": []
+    },
+    "frontend-shared-ui": {
+      "tags": []
     }
   }
 }
