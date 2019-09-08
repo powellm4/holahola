@@ -19,7 +19,15 @@
       "@holahola/frontend/feature-authentication": [
         "libs/frontend/feature-authentication/src/index.ts"
       ],
-      "@holahola/frontend/shared/ui": ["libs/frontend/shared/ui/src/index.ts"]
+      "@holahola/frontend/shared/ui": ["libs/frontend/shared/ui/src/index.ts"],
+      "@ngx-utility/logger": ["libs/shared/ngx-utility/logger/src"],
+      "@ngx-utility/notifications": [
+        "libs/shared/ngx-utility/notifications/src"
+      ],
+      "@ngx-ui/bootstrap": ["libs/shared/ngx-ui/bootstrap/src"],
+      "@ngx-utility/authentication": [
+        "libs/shared/ngx-utility/authentication/src"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
