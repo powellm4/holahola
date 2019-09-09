@@ -1,9 +1,21 @@
+import { IdentityProviders } from '@ngx-utility/authentication';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  authentication: IdentityProviders.firebase,
+  firebaseConfig: {
+    apiKey: 'AIzaSyCHFSSFO43ITMjvNWGr1HP6L1koRCPMnrY',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '179385722481',
+    appId: '1:179385722481:web:aa76ab50db2b1200'
+  }
 };
 
 /*
