@@ -26,9 +26,13 @@ MySQL can also be installed and interacted with via the command line.
 
 4. In the PyCharm Terminal ( or any terminal/command line ) navigate to
   holahola/apps/backend and run `pipenv install`
-
-    - If you receive an error installing mysqlclient via pipenv on Mac, run the following command:
-  `env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pipenv install mysqlclient`
+    - If you receive an error installing mysqlclient via pipenv:
+      - Mac: run the following command:
+    `env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pip install mysqlclient`
+      - Windows: (hacky, but necessary for some reason) 
+        - [download the binary for mysqlclient](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient) 
+          - download "mysqlclient-1.4.4-cp37-cp37m-win32.whl"
+        - navigate to where you installed it and run :`pip install mysqlclient-1.4.4-cp37-cp37m-win32.whl`
 
 5. Initialize the data by running `python manage.py migrate`*
 
