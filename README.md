@@ -36,4 +36,4 @@ MySQL can also be installed and interacted with via the command line.
   In your browser, navigate to http://127.0.0.1:8000/
 
 
-* - It may be necessary to run any `python ..` commands as `python3 ..`
+\* - It may be necessary to run any `python ..` commands as `python3 ..`
