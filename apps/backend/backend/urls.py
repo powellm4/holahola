@@ -1,4 +1,4 @@
-"""holahola URL Configuration
+"""backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,12 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from api.resources import UserResource
+from django.urls import path
+from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
 
-user_resource = UserResource()
+
+from django.conf.urls import url, include
+
+from api import views
+
+router = routers.DefaultRouter()
+router.register(r'languages', views.LanguageViewSet)
+router.register(r'holeros', views.HoleroViewSet)
+
+schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(user_resource.urls))
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^docs/', schema_view),
 ]
