@@ -1,7 +1,4 @@
-# holahola
-
-
-## Setting up your development environment (Backend):
+# Setting up your development environment (Backend):
 
 
 ### Database 
