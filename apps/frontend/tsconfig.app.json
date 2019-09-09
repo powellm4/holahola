@@ -4,6 +4,11 @@
     "outDir": "../../dist/out-tsc",
     "types": []
   },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParamters": true,
+    "enableIvy": true
+  },
   "include": ["**/*.ts"],
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"]
 }
