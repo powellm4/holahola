@@ -20,9 +20,9 @@ MySQL can also be installed and interacted with via the command line.
 
 1. Install [PyCharm](https://www.jetbrains.com/pycharm/download/) ( not required, but a good IDE for Python development )
 
-2. Install python3 globally
+2. Install [python3](https://realpython.com/installing-python/) globally
 
-3. Install pipenv globally
+3. Install [pipenv](https://docs.pipenv.org/en/latest/install/) globally
 
 4. In the PyCharm Terminal ( or any terminal/command line ) navigate to
   holahola/apps/backend and run `pipenv install`
