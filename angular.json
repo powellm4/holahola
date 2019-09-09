@@ -20,7 +20,7 @@
             "main": "apps/frontend/src/main.ts",
             "polyfills": "apps/frontend/src/polyfills.ts",
             "tsConfig": "apps/frontend/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "apps/frontend/src/favicon.ico",
               "apps/frontend/src/assets"
