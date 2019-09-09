@@ -30,7 +30,10 @@ MySQL can also be installed and interacted with via the command line.
     - If you receive an error installing mysqlclient via pipenv on Mac, run the following command:
   `env LDFLAGS="-L$(brew --prefix openssl)/lib" CFLAGS="-I$(brew --prefix openssl)/include" pipenv install mysqlclient`
 
-5. Initialize the data by running `python manage.py migrate`
+5. Initialize the data by running `python manage.py migrate`*
 
-6. Test your backend by running `python manage.py runserver`
+6. Test your backend by running `python manage.py runserver`*
   In your browser, navigate to http://127.0.0.1:8000/
+
+
+* - It may be necessary to run any `python ..` commands as `python3 ..`
