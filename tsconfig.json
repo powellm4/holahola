@@ -27,7 +27,10 @@
       "@holahola/frontend/feature-authentication": [
         "libs/frontend/feature-authentication/src/index.ts"
       ],
-      "@holahola/frontend/shared/ui": ["libs/frontend/shared/ui/src/index.ts"]
+      "@holahola/frontend/shared/ui": ["libs/frontend/shared/ui/src/index.ts"],
+      "@holahola/frontend/feature-video-chat": [
+        "libs/frontend/feature-video-chat/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

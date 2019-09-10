@@ -19,6 +19,9 @@
     },
     "frontend-shared-ui": {
       "tags": []
+    },
+    "frontend-feature-video-chat": {
+      "tags": []
     }
   }
 }

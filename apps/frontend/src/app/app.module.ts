@@ -25,6 +25,13 @@ export const routes: Route[] = [
       import('@holahola/frontend/feature-authentication').then(
         mod => mod.FrontendFeatureAuthenticationModule
       )
+  },
+  {
+    path: 'chat',
+    loadChildren: () =>
+      import('@holahola/frontend/feature-video-chat').then(
+        mod => mod.FrontendFeatureVideoChatModule
+      )
   }
 ];
 
