@@ -14,24 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
-from rest_framework_swagger.views import get_swagger_view
+from api import views, urls
 
-
-from django.conf.urls import url, include
-
-from api import views
 
 router = routers.DefaultRouter()
 router.register(r'languages', views.LanguageViewSet)
 router.register(r'holeros', views.HoleroViewSet)
-
-schema_view = get_swagger_view(title='Pastebin API')
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
+    path('api/', include('api.urls')),
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^docs/', schema_view),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
