@@ -39,3 +39,7 @@ export const registerSuccess = createAction(
   '[Auth] Register Success',
   props<{ user: User }>()
 );
+
+export const navigateBackAfterLogin = createAction(
+  '[Auth] Navigate Back After Login'
+);

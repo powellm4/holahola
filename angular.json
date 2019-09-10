@@ -23,7 +23,12 @@
             "aot": true,
             "assets": [
               "apps/frontend/src/favicon.ico",
-              "apps/frontend/src/assets"
+              "apps/frontend/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./libs/frontend/shared/assets/",
+                "output": "./assets"
+              }
             ],
             "styles": [
               "apps/frontend/src/styles.scss",
@@ -178,6 +183,40 @@
             "jestConfig": "libs/frontend/shared/ui/jest.config.js",
             "tsConfig": "libs/frontend/shared/ui/tsconfig.spec.json",
             "setupFile": "libs/frontend/shared/ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "frontend-feature-video-chat": {
+      "projectType": "library",
+      "root": "libs/frontend/feature-video-chat",
+      "sourceRoot": "libs/frontend/feature-video-chat/src",
+      "prefix": "holahola",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/frontend/feature-video-chat/tsconfig.lib.json",
+              "libs/frontend/feature-video-chat/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/frontend/feature-video-chat/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/frontend/feature-video-chat/jest.config.js",
+            "tsConfig": "libs/frontend/feature-video-chat/tsconfig.spec.json",
+            "setupFile": "libs/frontend/feature-video-chat/src/test-setup.ts"
           }
         }
       },

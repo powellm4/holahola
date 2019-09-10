@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from '@ngx-utility/authentication';
 import { Injectable } from '@angular/core';
 import { createEffect, Actions } from '@ngrx/effects';
@@ -5,16 +6,15 @@ import { DataPersistence } from '@nrwl/angular';
 
 import { AuthPartialState, AUTH_FEATURE_KEY } from './auth.reducer';
 import * as AuthActions from './auth.actions';
-import { map } from 'rxjs/operators';
+import { map, mapTo } from 'rxjs/operators';
+import { Location } from '@angular/common';
+import { from } from 'rxjs';
 
 @Injectable()
 export class AuthEffects {
   loadAuth$ = createEffect(() =>
     this.dataPersistence.fetch(AuthActions.loadAuth, {
-      run: (
-        action: ReturnType<typeof AuthActions.loadAuth>,
-        state: AuthPartialState
-      ) => {
+      run: () => {
         // Your custom service 'load' logic goes here. For now just return a success action...
         return AuthActions.loadAuthSuccess();
       },
@@ -48,7 +48,7 @@ export class AuthEffects {
     })
   );
 
-  loginSuccess$ = createEffect(() =>
+  navigateBack$ = createEffect(() =>
     this.dataPersistence.fetch(AuthActions.loginSuccess, {
       run: (
         action: ReturnType<typeof AuthActions.loginSuccess>,
@@ -58,8 +58,9 @@ export class AuthEffects {
           'accessToken',
           state[AUTH_FEATURE_KEY].accessToken
         );
-        console.log(action);
-        console.log(state);
+        return from(this.router.navigate(['chat'])).pipe(
+          mapTo(AuthActions.navigateBackAfterLogin())
+        );
       },
       onError: (action: ReturnType<typeof AuthActions.loginSuccess>, error) => {
         console.error('Error', error);
@@ -70,10 +71,7 @@ export class AuthEffects {
 
   register$ = createEffect(() =>
     this.dataPersistence.fetch(AuthActions.registerRequest, {
-      run: (
-        action: ReturnType<typeof AuthActions.registerRequest>,
-        state: AuthPartialState
-      ) => {
+      run: (action: ReturnType<typeof AuthActions.registerRequest>) => {
         return this.authService
           .register(action.userRegister)
           .pipe(map(user => AuthActions.registerSuccess({ user })));
@@ -90,8 +88,8 @@ export class AuthEffects {
   );
 
   constructor(
-    private actions$: Actions,
     private authService: AuthService,
+    private router: Router,
     private dataPersistence: DataPersistence<AuthPartialState>
   ) {}
 }
