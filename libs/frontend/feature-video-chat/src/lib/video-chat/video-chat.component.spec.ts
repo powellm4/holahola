@@ -1,3 +1,4 @@
+import { FrontendSharedUiModule } from '@holahola/frontend/shared/ui';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoChatComponent } from './video-chat.component';
@@ -8,9 +9,9 @@ describe('VideoChatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoChatComponent ]
-    })
-    .compileComponents();
+      imports: [FrontendSharedUiModule],
+      declarations: [VideoChatComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

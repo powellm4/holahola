@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from '@ngx-utility/authentication';
 import { TestBed, async } from '@angular/core/testing';
 
@@ -18,7 +19,7 @@ describe('AuthEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [NxModule.forRoot()],
+      imports: [NxModule.forRoot(), RouterTestingModule],
       providers: [
         AuthEffects,
         DataPersistence,

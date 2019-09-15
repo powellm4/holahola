@@ -10,6 +10,8 @@ export interface AppState extends EntityState<AppEntity> {
   selectedId?: string | number; // which App record has been selected
   loaded: boolean; // has the App list been loaded
   error?: string | null; // last none error (if any)
+  showSideNav: boolean;
+  showSecondSideNav: boolean;
 }
 
 export interface AppPartialState {
@@ -22,7 +24,9 @@ export const appAdapter: EntityAdapter<AppEntity> = createEntityAdapter<
 
 export const initialState: AppState = appAdapter.getInitialState({
   // set initial required properties
-  loaded: false
+  loaded: false,
+  showSideNav: false,
+  showSecondSideNav: false
 });
 
 const appReducer = createReducer(

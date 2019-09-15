@@ -1,4 +1,7 @@
+import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
+import { AppState } from './+state/app.reducer';
+import { loadApp } from './+state/app.actions';
 
 @Component({
   selector: 'holahola-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'holahola';
+
+  constructor(private store: Store<{ app: AppState }>) {
+    this.store.dispatch(loadApp());
+  }
 }

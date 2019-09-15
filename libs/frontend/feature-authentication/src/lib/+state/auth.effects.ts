@@ -1,13 +1,12 @@
 import { Router } from '@angular/router';
 import { AuthService } from '@ngx-utility/authentication';
 import { Injectable } from '@angular/core';
-import { createEffect, Actions } from '@ngrx/effects';
+import { createEffect } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/angular';
 
 import { AuthPartialState, AUTH_FEATURE_KEY } from './auth.reducer';
 import * as AuthActions from './auth.actions';
 import { map, mapTo } from 'rxjs/operators';
-import { Location } from '@angular/common';
 import { from } from 'rxjs';
 
 @Injectable()

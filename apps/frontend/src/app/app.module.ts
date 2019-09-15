@@ -1,3 +1,4 @@
+import { AppEffects } from './+state/app.effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
@@ -51,11 +52,11 @@ export const routes: Route[] = [
         }
       }
     ),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffects]),
     NxModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot({ routerState: RouterState.Minimal }),
-    StoreModule.forFeature(fromApp.APP_FEATURE_KEY, fromApp.reducer),
+    // StoreModule.forFeature(fromApp.APP_FEATURE_KEY, fromApp.reducer),
     FrontendSharedUiModule
   ],
   providers: [],

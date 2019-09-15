@@ -12,3 +12,10 @@ export const loadAppFailure = createAction(
   '[App] Load App Failure',
   props<{ error: any }>()
 );
+
+export const showSecondSideNav = createAction('[App] Show Second Side Nav');
+
+export const criticalError = createAction(
+  '[App] Critical Error',
+  props<{ error: any }>()
+);
