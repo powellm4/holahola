@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  api:
+    build: ./apps/backend
+    command: bash -c "python apps/backend/manage.py makemigrations && python apps/backend/manage.py migrate && python apps/backend/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "56789:8000"
+    depends_on:
+      - db
