@@ -1,6 +1,0 @@
-[submodule "libs/shared/ngx-utility"]
-	path = libs/shared/ngx-utility
-	url = https://github.com/jessejohnsohn/ngx-utility.git
-[submodule "libs/shared/ngx-ui"]
-	path = libs/shared/ngx-ui
-	url = https://github.com/jessejohnsohn/ngx-ui.git
