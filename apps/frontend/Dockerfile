@@ -1,21 +1,14 @@
-# The first instruction is what image we want to base our container on
-# We Use an official Python runtime as a parent image
-FROM python:3
-
-# The enviroment variable ensures that the python output is set straight
-# to the terminal with out buffering it first
-ENV PYTHONUNBUFFERED 1
-
-# create root directory for our project in the container
-RUN mkdir /app
-
-# Set the working directory to /app
+# build stage
+FROM node:lts-alpine as build-stage
 WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-# Copy the current directory contents into the container at /app
-ADD . /app/
 
-#RUN sudo apt-get install libpq-dev build-dep python-psycopg2
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
